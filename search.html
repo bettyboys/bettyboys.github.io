@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+  </script>
+	<script type="text/javascript" async src="path-to-mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+  <title>BettyBoys</title>
+  <meta name="description" content="Biologically Inspired Robotics and Dynamical Systems Lab, University of Michigan
+">
+
+  <link rel="stylesheet" href="/css/foundation.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/fontello.css">
+  <link rel="stylesheet" href="/css/font-awesome.css">
+
+  <script src="/javascripts/libs.js" type="text/javascript"></script>
+  <script>
+    // terrificjs bootstrap
+    (function($) {
+        $(document).ready(function() {
+            var $page = $('body');
+            var config = {
+              dependencyPath: {
+                plugin: 'javascripts/'
+              }
+            }
+            var application = new Tc.Application($page, config);
+            application.registerModules();
+            application.start();
+        });
+    })(Tc.$);
+  </script>
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,700,300" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/masonry.pkgd.js" type="text/javascript"></script>
+  <script src="/javascripts/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+  <script src="/javascripts/slick.min.js" type="text/javascript"></script>
+
+  <link rel="canonical" href="/search.html">
+  <link rel="alternate" type="application/rss+xml" title="BettyBoys" href="/feed.xml" />
+</head>
+
+
+  <body>
+
+    <a href="" id="top"></a>
+<div class='contain-to-grid sticky'>
+  <nav class='top-bar' data-options='sticky_on: large' data-topbar=''>
+    <ul class='title-area'>
+      <li class='name'>
+        <h1>
+          <a href="/index.html">
+            <img alt="" src="/images/logo-bordered.png" />
+          </a>
+        </h1>
+      </li>
+      <li class='toggle-topbar menu-icon'>
+        <a href='#'>Menu</a>
+      </li>
+    </ul>
+    <section class='top-bar-section'>
+      <ul class="right">
+        
+          
+            
+          
+
+          
+            <li class="">
+              <a href="/index.html">About</a> 
+            </li>
+          
+        
+          
+            
+          
+
+          
+            <li class="">
+              <a href="/research/">Project</a> 
+            </li>
+          
+        
+          
+            
+          
+
+          
+            <li class="">
+              <a href="/people/gruntwork.html">People</a> 
+            </li>
+          
+        
+          
+            
+          
+
+          
+            <li class="">
+              <a href="/blog/">Blog</a> 
+            </li>
+          
+        
+      </ul>
+    </section>
+  </nav>
+</div>
+
+
+    <div id='main' role='main'>
+      <div class="search">
+	<div class='full'>
+  <div class='row'>
+    <div class='large-12 columns'>
+		<form action="/search.html" method="get">
+		  <label for="search-box">Search</label>
+		  <input type="text" id="search-box" name="query">
+		  <input type="submit" class="button small" value="search">
+		</form>
+
+		<ul id="search-results"></ul>
+
+		<script>
+		  window.store = {
+			
+			  "news-2016-12-11-2016-12-20-html": {
+				"title": "Final Report",
+				"author": "Vikram Sachdeva",
+				"category": "",
+				"content": "Here is our [code.](https://drive.google.com/file/d/0B1kZnS85NG_MNW5yOVAwcjBJVFU/view)Here is our [powerpoint.](https://www.dropbox.com/s/wu05z0cfqa5819b/Accent%20Transformation.pptx?dl=0)Here are examples of our [transformations.](https://www.dropbox.com/sh/o09arj9w54n3ai1/AAC_JRLNp6xWMIItpEBe0mqUa?dl=0)TOOLS USED:MFCC:        \tMel Frequency Cepstrum Coefficients (MFCCs) are a common way of representing spoken word signals such in DSP. The inspiration for this feature vector is taken from how the human ear processes sound. The MFCC vector of a signal segment is generated as follows:1. Take the Fourier Transform of a windowed signal.  2. Calculate the power spectrum of the Fourier Transform.3. Apply a filter that takes the power spectrum and defines it with twenty six bins. Each bin describes the power of a certain range of frequencies, and there can be overlap between bins. This process is described as passing the power spectrum through a mel filter. These bins apply a filter that separates the spectrum into 26 bins, 13 in the negative frequency section of the Fourier Transform and 13 in the positive section. Because the signal we transformed is real-value, the negative frequency components of the Fourier Transform are equal to the complex conjugate of the corresponding positive frequency components, so we can actually define only 13 bins. These bins are spaced exponentially, with higher frequency bins covering a larger range of frequencies. This mimics the way that the human ear processes sound. 4.  Take the log of each of these binned values. This approximates the way that the human ear processes loudness, which is on a logarithmic scale, like the decibel. 5.  Take the Discrete Cosine Transform of the 26 power banks. This is required to make certain that the signal is real valued. Dynamic Time Warping:        \tDynamic Time Warping (DTW) is an algorithm that calculates similarities between two discrete time signals that vary in speed and length. For our project, this was particularly valuable due to the fact that words can be spoken at different rates. This algorithm allowed us to build one concise classifier for a speaker on a training sentence, and then allowed us to generalize it.        \tThis algorithm generates an n by m matrix, where n is the length of one signal, and m is the length of our other signal. Each indices of the matrix denotes euclidian distance between the two signals at a certain point in time. Then we find the least weighted path from (n, m) to (1,1). This least weighted path describes the optimal mapping from timepoints of one vector to timepoints of the other vector. The following figure is a plot of the cumulative weight map that is created as an intermediate step in DTW. Only values reasonably close to the diagonal are calculated because it is assumed that the signals will not diverge too greatly.K-Nearest Neighbors for Classification:        \tIn order to classify the phonemes in our samples, we used K-Nearest Neighbors (KNN) classification. This classification algorithm inputs an unlabeled data vector and a set of labeled vectors. The Euclidean distance from each labeled vector to the unlabeled vector (i.e., the norm of the difference vector between the two) is calculated, and for some number K, the K labeled vectors with the smallest distance are taken. A “majority vote” is taken, where the most common label in this set of K labels is assigned to the unlabeled vector. In the case of a tie, the label of the closest vector among the tied vectors is used.          \t  METHODS AND PROCEDURE:Our project required an effective way to quantify a given speech signal’s phonemes. The problem we encountered was that spoken speech can be imprecise, unpredictable, and variable and these disfluencies carry into the time domain. Rather than investigating the signal in the time domain, we chose use to use MFCCs as our feature vector. While a few linguistic papers do investigate phoneme classification in the time domain, we found academic literature to heavily favor analysis through MFCCs and thereby chose this route.Feature vectors are defined as a vector containing information describing an object's key characteristics. This is similar to non-redundant columns that span a matrix’s subspace, or a RGB vector describing a pixel’s color in an image. After implementing a toolbox that computed MFCCs for us, we wanted to use K-nearest Neighbors as our phoneme classification scheme. We considered two other classification methods: Bayesian and Support Vector Machine. To create a Bayesian model, you must obtain reasonable estimates for the probability of a given feature vector, the probability of a given phoneme, and the probability of a feature vector given it is of a certain type of phoneme. We did not have reliable ways to generate these probabilities, so we decided against a Bayesian model. A Support Vector Machine would divide up the 13-dimensional feature space into regions, with each region corresponding to one phoneme; any vector that lies inside a certain space is classified as that phoneme. We found this to be unsuccessful, which we hypothesized was due to variations and overlap in MFCCs of different phonemes. K-Nearest Neighbors actually worked very well for us.To begin KNN classification, Paul spoke a sentence that contains all of the phonemes of the English language, and then recited each of the 44 phonemes of in the English language 5 times. The recitation of the phonemes will be hereby referred to as our training data. After using Audacity to split speech into the separate phonemes, we implemented a toolbox that computed the the full 13 dimensional space of MFCCs of the training data.As a time-saving technique, instead of splicing out each individual phoneme, we split the audio signal into segments containing all five phonemes of the same type. We then calculated the energy in the signal over each 10ms interval, by summing the squares of the sample values. We took the 15 highest amplitude intervals to be the best, in terms of SNR, and used them as our dictionary elements for each phoneme. This way we had an equal amount of elements for each label in our dictionary, so we did not have any bias in our classification.  Considering the 13 dimensional space of MFCCs, our KNN classifier gave us an error rate of 21.0% for phoneme classification and 1.48% for vowel classification, using leave one out cross validation to assert accuracy. Phoneme classification is defined as binning all of the phonemes in the spoken sentence to every phoneme in our data set, while vowel classification was using the same training data but binning to two bins that is, a vowel or consonant. We tried to improve the accuracy of the phoneme classifier by using a subspace of the MFCC feature space because we wanted to test to see if using less feature vectors to characterize an object could improve our classification scheme. In fact this did. We reached a minimum error of 18.33% when only considering coefficients 1,2,3,4,5,6,9,13. In this confusion matrix for the phoneme classifier, we can see that the vast majority of predictions coincide with the ground truth classification. This is the yellow line along the diagonal. There are a handful of elements which contribute most of the errors. To correct misclassifications in our program, we implemented a noncausal moving average across the vector of classified phonemes. We considered a window size of 10 for this algorithm, and if we saw that more than 60% of the phonemes in this window were of a certain class, then the phoneme in the middle of that window would be changed to that class. We found that five passes of this algorithm was best in order to get large contiguous regions of a singular phoneme.  In the diagram below, the top row is a sequence of phonemes before the moving average is applied, and the bottom row is the resultant sequence. The extraneous vowels in the string of ‘l’s are removed after the application of the filter.'uh'\t'l'\t'l'\t'uh'\t'l'\t'l'\t'oy'\t'l'\t'l'\t'l'\t'l'\t'l'\t'l'\t'uh'\t'l'\t'l'\t'l'\t'l'\t'l'\t'l'\t'l'\t'l'\t'l'\t'l'\t'l'\t'l'\tIn speech, different speakers take varying times to say identical words. Dynamic Time Warping helped us overcome this problem. DTW is an algorithm that computes a least-cost mapping from timepoints in one discrete-time signal to another discrete-time signal. First, a weight matrix is created for ordered pairs of timepoints in the two signals. Values are only calculated for ordered pairs within a certain distance of the diagonal, because it is assumed that the signals move at similar rates. This is a technique used in research papers on the subject [3]. The weight is created by adding the norm of the difference of the two vectors at the given timepoints to the lowest adjacent weight. Once the weight matrix is created, we work backwards from the ordered pair corresponding to the end of both signals. There are three moves that can be made at each iteration: move back in one signal, move back in the other, or move back in both. The move that has the least weight in the weight matrix is chosen. This goes on until the ordered pair (1,1) is arrived at.  Once dynamic time warping has created a map from timepoints in the unaccented speech to timepoints in the accented speech, we can find segments of accented speech that correspond to vowels in the unaccented speech. Then we use our classification model to predict the phonemes that the segments of accented speech are most like. Taking the mode of these classified segments, we find the most viable substitute for the vowel in the unaccented speech. In our project, we were only looking at vowels rather than the whole set of phonemes, because we wanted to downscale our project and believed that most ‘accent’ can be found by looking at the vowels in a speech signal. So we were able to find the vowel that, in the unaccented speaker’s pronunciation, was the most similar to the vowel spoken by an accented speaker. Because we have samples of the unaccented speech saying all phonemes, we are able to extract sound from those samples and substitute it for the original vowel. The extraction was done by taking overlapping segments of the signal that we wanted to replace the original with, and finding the segment with the highest power, and simply splicing that segment in place of the original vowel.In the place of the original, unaccented vowel, we now have a vowel that is most similar to the way the vowel is spoken in accented speech. We had initially planned to do this by finding a sample of the vowel in the actual speech, but we found that we were not able to make our classification robust enough to get good results in this way.  RESULTS AND FUTURE IMPROVEMENTS:In our synthesized ‘accented’ speech, we have many substitutions that are either erroneous or too short to make an audible impact. This is primarily due to classification and audio editing errors.There are numerous improvements we can make, with the most notable one in combining the two classifiers we have in tandem. Considering our vowel classifier classifies the binary ‘is it a vowel or consonant?’ with 98.52% accuracy, and the phoneme classifier identifies every phoneme with a 81.33% accuracy, calculated using leave one out cross validation . If we combined both classifiers it is likely error would have been reduced. Unfortunately, we implemented both of them independent of one another since our original idea was to just use one of them, and rectifying the syntax errors between the two proved to be impractical given our time constraints. Also, using human neural networks instead of KNN could have given us much better results as well. Yet, we felt as if the deep learning mathematics of Neural Networks were far too complex for us to understand, and felt at odds in using a toolbox that quickly computed this for us.   Voice synthesis could also be improved upon. Once the accented version of the phoneme is identified, it is naively pasted into the discrete time spoken signal at the point where energy is highest. More complex methodologies of voice synthesis, such as Google’s WaveNet could be implemented for smoother sounding audio [7].    ADDENDUM: In our Transformation Folder, ‘english13.mp3’, ‘english19.mp3’,‘english71.mp3’ were the respective British, Southern, and Midwestern accents we wanted to emulate. Two other files, ‘english117.mp3’ and  ‘english145.mp3’ were additional files we included that were respectively, a feminine-sounding voice and another British accent. All of these files were from the Speech Accent archive. [8] As illustrated through our transformed audio ‘..._Transform.wav’ and discussed above, we have many short substitutions that do not create a discernible impact to transform the speech.  However, notable achievements that resulted in a slight speech transformation occurred at time points throughout our files:  ‘english19_Transform.wav’: 0:13 (‘five thick slabs’) 0:26 (‘for the kids’), ‘english117_Transform.wav’: 0:02(‘ask her’) , 0:18(‘a snack’), ‘english145_Transform.wav’: 0:02(‘ask her’), 0:09 (‘six spoons’).Our file, ‘english117_Transform.wav’, was especially illuminating because of the high prevalence of resubstitution errors. This could be a result of a variety of errors, but we suspect that our training data was not adapted to the variance of pitch this sound file presents. In turn, our classifier results in a great deal of errors, but we could have rectified this situation by including a variety of training data with variable pitch scales.  The confusion matrix for our KNN classifier discussed previously was not appearing due to formatting issues. We have addressed this and it is presented above. The confusion matrix for the vowel/consonant classifier is pictured below. We do not have confusion matrices for the classifier that we do not use because we do not have working code that implements them, since we decided on a KNN Classifier relatively early on in the project.  Works Cited:http://www.sersc.org/journals/IJSIP/vol5_no1/10.pdf http://www.dyslexia-reading-well.com/support-files/the-44-phonemes-of-english.pdf http://www.psb.ugent.be/cbd/papers/gentxwarper/DTWalgorithm.htm https://www.mathworks.com/matlabcentral/fileexchange/43156-dynamic-time-warping--dtw- https://www.mathworks.com/matlabcentral/fileexchange/32849-htk-mfcc-matlab/content/mfcc/mfcc.m https://arxiv.org/abs/1003.4083 https://arxiv.org/pdf/1609.03499.pdf http://accent.gmu.edu/  Easter Egg? Go to home page and type 'eecsbit' Audio on and you'll hear a mix! [1]: http://www.sersc.org/journals/IJSIP/vol5_no1/10.pdf[2]: http://www.dyslexia-reading-well.com/support-files/the-44-phonemes-of-english.pdf[3]: http://www.psb.ugent.be/cbd/papers/gentxwarper/DTWalgorithm.htm[4]: https://www.mathworks.com/matlabcentral/fileexchange/43156-dynamic-time-warping--dtw-[5]: https://www.mathworks.com/matlabcentral/fileexchange/32849-htk-mfcc-matlab/content/mfcc/mfcc.m[6]: https://arxiv.org/abs/1003.4083[7]: https://arxiv.org/pdf/1609.03499.pdf[8]: http://accent.gmu.edu/browse.php.   ",
+				"url": "/news/2016/12/11/2016-12-20-.html"
+			  }
+			  ,
+			
+			  "news-2016-11-22-2016-11-20-html": {
+				"title": "Progress Report 1",
+				"author": "James Connolly",
+				"category": "",
+				"content": "Currently, we are still understanding and developing the blocks within our system. Two hurdles beginning our project were MFCC generation and dynamic time warping. Fortunatley, MFCC generation is a well defined problem, and there is well documented,open source code  that implements this block in our system. Our worries with MFCCs was that it would not be an effective basis when describing accented phonemes. We found that a naive k-Nearest Neighbors was very effective at classifying accented phonemes using  MFCCS, as detailed in our final proposal, proving that MFCCs was a viable basis in which our signal could be represented. In our project, speakers may take a different duration to speak the same word. This incongruency would result in certain phonemes to be spoken faster or slower than the other, distorting MFCCs. Therefore, we had to implement dynamic time warping (DTW) which addresses this issue by providing a mapping from one signal to another. The struggle with this algorithm was that traditionally it was implemented with the consideration that the input is a 1xN vector. Our inputs, MFCCs, are 13xN matrices, so one difficulty has been adapting the DTW algorithm to allow for this input structure. Over future plans consist of both finishing and verifying DTW’s implementation (which should be completed by this week). After this, our next challenge will be understanding how effective DTW is at mapping phonemes between each vector in our training set gathered from the Speech Accent Archive. Then, our plan is to generate a dictionary that maps a given phoneme to the same phoneme in a specified accent.  Once the dictionary is complete, we will begin system integration, which will consist of designing a script that will take in a spoken calibration signal, a specified accent, and any number of spoken signals to be transformed. The script will output spoken signals transformed such that they have characteristics of the input accent. This script will utilize the DTW, MFCC and the dictionary that we have generated. One method that we have learned through our research for the project is the Mel-Frequency Cepstrum Coefficient (MFCC). This is a modification of the spectrum of a signal that is a robust way to determine the phoneme that is being voiced. The MFCC is calculated through a series of steps. First the spectrum is calculated through a Fourier transform. Then the logarithm of this spectrum is calculated. Then a small number of overlapping windows are created, usually around 13-19; these are spaced exponentially to mimic the exponential nature of human pitch recognition. The power of the signal within each of these windows is calculated, and the logarithm of the power is taken to mimic the way that the human ear perceives loudness. Thus, a 13-19 element vector with values on the range of 10^1 are obtained. This has a number of benefits for speech processing. For one, it solves the problem of people that speak at different pitches. Since much of speech is harmonic, a traditional spectrum will not pick up similarities between signals that are at different pitches, but the windows incorporated into MFCC calculation account for the minor variations in pitch. Also, the MFCC reduces calculation time, because it has far fewer components than a spectrum, which means that we are working in a much smaller vector space. Finally, the adjustments that are made to account for the way that humans hear, mean that we do not have to do any scaling or weighting after the MFCCs are created. This is a plot showing the map between two speech signals. Each speaker is saying the same sentence, but the number and length of pauses vary, as well as the rate of speech. Therefore, although a linear increasing trend can be seen clearly, there are some variations.This is a plot of the time-domain representation of a vowel. Although the signal is not perfectly periodic, it is easy to see that it has harmonic content.This is a plot of many MFCC vectors calculated from one vowel. Although there are minor variations, there is a clear contour that all of the vectors follow, so they are clustered very closely together in their 13-dimensional vector space._Authors_ : Vikram Sacheva, James Connolly, Paul Reggentin",
+				"url": "/news/2016/11/22/2016-11-20-.html"
+			  }
+			  ,
+			
+			  "booklist-2016-11-21-2016-11-20-html": {
+				"title": "MFCC-GMM based accent recognition system for Telugu speech signals",
+				"author": "Vikram Sachdeva",
+				"category": "",
+				"content": "### AbstractSpeech processing is very important research area where speaker recognition, speech synthesis, speech codec, speech noise reduction are some of the research areas. Many of the languages have different speaking styles called accents or dialects. Identification of the accent before the speech recognition can improve performance of the speech recognition systems. If the number of accents is more in a language, the accent recognition becomes crucial. Telugu is an Indian language which is widely spoken in Southern part of India. Telugu language has different accents. The main accents are coastal Andhra, Telangana, and Rayalaseema. In this present work the samples of speeches are collected from the native speakers of different accents of Telugu language for both training and testing. In this work, Mel frequency cepstral coefficients (MFCC) features are extracted for each speech of both training and test samples. In the next step Gaussian mixture model (GMM) is used for classification of the speech based on accent. The overall efficiency of the proposed system to recognize the speaker, about the region he belongs, based on accent is 91 %.[Link to Paper](http://link.springer.com/article/10.1007/s10772-015-9328-y)",
+				"url": "/booklist/2016/11/21/2016-11-20-.html"
+			  }
+			  ,
+			
+			  "booklist-2016-11-20-2016-11-20-html": {
+				"title": "Stack Exchange Question on Voice Conversion",
+				"author": "Vikram Sachdeva",
+				"category": "",
+				"content": "This Stack Exchange Question Thread has aided us tremendously in our first steps. The question posed was \"How to mimic/copy/fake someone's voice?\" Our project is far different than this, but our solution has similar aspects to the proposed solution.[Link to Question](http://dsp.stackexchange.com/questions/7833/how-to-mimic-copy-fake-someones-voice)",
+				"url": "/booklist/2016/11/20/2016-11-20-.html"
+			  }
+			  
+			
+		  };
+		</script>
+		<script src="/javascripts/lunr.min.js"></script>
+		<script src="/javascripts/search.js"></script>
+
+	</div>
+  </div>
+  
+</div>
+</div>
+    </div>
+
+    <div id='footer'>
+  <!-- <div class='one spacing'></div> -->
+  <div class='row'>
+    <div class='large-9 medium-3 columns'>
+      <h1>
+        <a href='index.html'>
+          <!-- <img alt="" src="/images/logo-grey.png" /> -->
+        </a>
+      </h1>
+      <h3> Contact Us</h3>
+      <p> 
+      
+        Email: bettyboys[at]umich[dot]edu<br> Location: Chez Betty, Triple "B", Ann Arbor, MI<br>
+        ©2016 BettyBoys. All rights reserved.
+      </p>
+            <!-- <p>©2016 BettyBoys. All rights reserved.</p> -->
+
+      <!-- <div class='spacing'></div>
+      <div class='spacing'></div> -->
+    </div>
+
+    <div class='large-5 medium-3 columns'>
+
+
+      <!-- <div class='spacing'></div> -->
+      <!-- <div class='links'>
+        <h4>Recent posts</h4>
+        <ul>
+          
+            <li><a href="/news/2016/12/11/2016-12-20-.html">Final Report</a></li>
+          
+            <li><a href="/news/2016/11/22/2016-11-20-.html">Progress Report 1</a></li>
+          
+            <li><a href="/booklist/2016/11/21/2016-11-20-.html">MFCC-GMM based accent recognition system for Telugu speech signals</a></li>
+          
+            <li><a href="/booklist/2016/11/20/2016-11-20-.html">Stack Exchange Question on Voice Conversion</a></li>
+          
+        </ul>
+      </div> -->
+      <!-- <div class='spacing'></div> -->
+    </div>
+
+
+
+
+    <!-- <div class='large-3 medium-3 columns'>
+      <div class='spacing'></div>
+      <h4>Contact us</h4>
+      <ul>
+        <li>Email: shrevzen[at]umich.edu</li>
+        <li>Location: EECS Building, 1301 Beal Avenue, Ann Arbor, MI</li>
+      </ul>
+      <div class='spacing'></div>
+      <ul class='socials'>
+        <li>
+          <a href='https://www.youtube.com/channel/UCfiCiRxbf5X15Jv7y4C-cKA'>
+            <i class='fa fa-youtube-play'></i>
+          </a>
+        </li>
+      </ul>
+      <div class='spacing'></div>
+    </div> -->
+  </div>
+  <!-- <div class='one spacing'></div> -->
+
+</div>
+
+<script src="/javascripts/jquery.countTo.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.appear.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.validate.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.sequence-min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="/javascripts/app.js" type="text/javascript"></script>
+
+  </body>
+
+</html>
